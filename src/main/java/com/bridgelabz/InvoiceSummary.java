@@ -3,14 +3,20 @@ package com.bridgelabz;
 import java.util.Objects;
 
 public class InvoiceSummary {
-    private final int numOfRides;
-    private final double totalFare;
-    private final Object average;
+    int numOfRides;
+    double totalFare;
+    Object average;
+    String userId;
 
     public InvoiceSummary(int numOfRides, double totalFare){
         this.numOfRides = numOfRides;
         this.totalFare = totalFare;
         this.average = this.totalFare/this.numOfRides;
+    }
+
+    public InvoiceSummary(String userId, double totalFare){
+        this.userId = userId;
+        this.totalFare = totalFare;
     }
 
     @Override

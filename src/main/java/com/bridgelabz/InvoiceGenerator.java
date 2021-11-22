@@ -34,7 +34,7 @@ public class InvoiceGenerator {
         double totalFare = 0;
         for (Ride ride : rides){
             if(ride.userId.equals(userId)){
-                totalFare = this.calculateFare(ride.distance,ride.time);
+                totalFare += this.calculateFare(ride.distance,ride.time);
             }
         }
         return new InvoiceSummary(userId,totalFare);

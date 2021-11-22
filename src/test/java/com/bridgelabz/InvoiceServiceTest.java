@@ -50,11 +50,12 @@ public class InvoiceServiceTest {
     public void givenUserIdWhenAddedShouldReturnInvoice(){
         Ride[] rides = {
                 new Ride(2.0,5,"1"),
+                new Ride(3.0,5,"1"),
                 new Ride(3.0,5,"2"),
                 new Ride(1.0,1,"3")
         };
-        InvoiceSummary invoiceSummary = iG.invoice(rides,"2");
-        InvoiceSummary expectedInvoiceSummary = new InvoiceSummary("2",35);
+        InvoiceSummary invoiceSummary = iG.invoice(rides,"1");
+        InvoiceSummary expectedInvoiceSummary = new InvoiceSummary("1",60);
         Assert.assertEquals(expectedInvoiceSummary,invoiceSummary);
     }
 }

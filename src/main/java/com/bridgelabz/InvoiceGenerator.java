@@ -1,5 +1,7 @@
 package com.bridgelabz;
 
+import java.util.List;
+
 public class InvoiceGenerator {
 
     public double FARE_PER_KILOMETER = 10;
@@ -26,5 +28,15 @@ public class InvoiceGenerator {
             totalFare += this.calculateFare(ride.distance, ride.time);
         }
         return new InvoiceSummary(rides.length,totalFare);
+    }
+
+    public InvoiceSummary invoice(Ride[] rides, String userId) {
+        double totalFare = 0;
+        for (Ride ride : rides){
+            if(ride.userId.equals(userId)){
+                totalFare += this.calculateFare(ride.distance,ride.time);
+            }
+        }
+        return new InvoiceSummary(userId,totalFare);
     }
 }
